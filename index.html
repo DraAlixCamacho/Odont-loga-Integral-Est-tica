@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#030406">
-  <meta name="description" content="Dra. Alix Camacho C. — odontología integral, estética y rehabilitación en Medellín. Atención en sedes Zona Sur y Zona Norte.">
+  <meta name="description" content="Odontología integral y estética en Medellín con la Dra. Alix Camacho. Valoración personalizada y rehabilitación oral en sedes Zona Sur y Norte.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Dra. Alix Camacho | Odontología Integral & Estética">
+  <meta property="og:description" content="Atención odontológica integral y estética personalizada en Medellín. Conozca los tratamientos y agende su valoración.">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Dra. Alix Camacho C. | Odontología Integral &amp; Estética</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +31,12 @@
       --max: 1200px; /* Ligeramente más ancho para el estilo portafolio */
     }
     *{box-sizing:border-box}
+    :focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+    .skip-link{position:absolute;left:12px;top:-60px;z-index:1000;padding:10px 14px;background:var(--gold-light);color:#111;border-radius:8px;font-weight:700}
+    .skip-link:focus{top:12px}
+    button,a{-webkit-tap-highlight-color:transparent}
+    input,textarea,button{font:inherit}
+    .form-note{font-size:10px;color:var(--muted);line-height:1.5;margin:10px 0 0}
     html{scroll-behavior:smooth;scroll-padding-top:88px}
     body{
       margin:0;
@@ -220,6 +232,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="top">
     <div class="wrap">
       <span><i class="fa-solid fa-certificate" style="color:var(--gold)"></i> Odontología UdeA &amp; CES · Registro Profesional 5-3044-07</span>
@@ -238,7 +251,7 @@
         <img src="logo_4.jpeg" alt="Logo AC" class="monogram" onerror="this.style.display='none'">
         <span><strong class="gold">Dra. Alix Camacho C.</strong><small>Odontología Integral &amp; Estética</small></span>
       </a>
-      <nav id="nav">
+      <nav id="nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#trayectoria">Trayectoria</a>
         <a href="#servicios">Tratamientos</a>
@@ -248,11 +261,11 @@
         <a href="#contacto">Contacto</a>
       </nav>
       <a class="button desktop-cta" href="#contacto"><i class="fa-regular fa-calendar-check"></i> Agendar cita</a>
-      <button class="mobile-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <button class="mobile-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="nav" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     </div>
   </header>
   
-  <main>
+  <main id="contenido">
     <section class="hero" id="inicio">
       <div class="wrap hero-grid">
         <div class="hero-copy">
@@ -458,7 +471,7 @@
             <h3>¿Cómo fue tu experiencia?</h3>
             <form id="review-form">
               <div class="form-group">
-                <input type="text" id="rev-name" placeholder="Tu nombre" required>
+                <input type="text" id="rev-name" name="name" placeholder="Tu nombre" autocomplete="name" maxlength="60" required>
               </div>
               <div class="form-group rating-input">
                 <label>Calificación:</label>
@@ -471,7 +484,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <textarea id="rev-text" placeholder="Escribe tu comentario..." rows="3" required></textarea>
+                <textarea id="rev-text" name="comment" placeholder="Escribe tu comentario..." rows="3" maxlength="500" required></textarea>
               </div>
               <div class="form-group recommend-input">
                 <label>¿Nos recomendarías a tus amigos?</label>
@@ -481,14 +494,15 @@
                 </div>
               </div>
               <button type="submit" class="button" style="width:100%">Publicar comentario</button>
-              <div id="form-message" style="display:none; color:#4ade80; font-size:12px; margin-top:12px; text-align:center;"><i class="fa-solid fa-check"></i> ¡Gracias por tu mensaje!</div>
+              <div id="form-message" role="status" aria-live="polite" style="display:none; color:#4ade80; font-size:12px; margin-top:12px; text-align:center;"></div>
+              <p class="form-note">Los comentarios que envíes se guardan únicamente en este navegador y no se publican en otros dispositivos.</p>
             </form>
           </div>
 
           <div class="reviews-list">
             <div class="reviews-header">
               <div>
-                <h3 style="margin:0; font-size:19px; color:var(--text); font-family:Cinzel,serif">Comentarios (<span id="rev-count">150</span>)</h3>
+                <h3 style="margin:0; font-size:19px; color:var(--text); font-family:Cinzel,serif">Opiniones en este navegador (<span id="rev-count">4</span>)</h3>
                 <p style="font-size:11px; margin:4px 0 0; color:var(--gold)">Calificación promedio 4.9 de 5</p>
               </div>
             </div>
@@ -585,48 +599,90 @@
 
     const grid = document.getElementById('reviews-grid');
     const countSpan = document.getElementById('rev-count');
+    const form = document.getElementById('review-form');
+    const message = document.getElementById('form-message');
+    const STORAGE_KEY = 'alix_reviews';
 
-    function renderReviews() {
-      const saved = JSON.parse(localStorage.getItem('alix_reviews') || '[]');
-      const allReviews = [...saved, ...defaultReviews];
-      countSpan.textContent = 146 + allReviews.length; 
-      
-      grid.innerHTML = allReviews.map(r => `
-        <div class="review-item">
-          <div>
-            <div class="rev-stars">
-              ${Array(5).fill(0).map((_,i) => `<i class="fa-solid fa-star" style="${i >= r.rating ? 'color:#444' : ''}"></i>`).join('')}
-            </div>
-            <div class="rev-text">"${r.text}"</div>
-          </div>
-          <div>
-            <div class="rev-author">- ${r.name}</div>
-            ${r.recommend ? `<div class="rev-rec"><i class="fa-solid fa-circle-check"></i> Recomienda este servicio</div>` : ''}
-          </div>
-        </div>
-      `).join('');
+    function readSavedReviews() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        if (!Array.isArray(parsed)) return [];
+        return parsed.filter(r => r && typeof r.name === 'string' && typeof r.text === 'string' && Number.isInteger(Number(r.rating)) && Number(r.rating) >= 1 && Number(r.rating) <= 5).slice(0, 100);
+      } catch (error) {
+        console.warn('No fue posible leer las opiniones locales.', error);
+        return [];
+      }
     }
 
-    const form = document.getElementById('review-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('rev-name').value;
-      const text = document.getElementById('rev-text').value;
-      const rating = document.querySelector('input[name="rating"]:checked')?.value || 5;
-      const recommend = document.getElementById('rec-yes').checked;
-      
-      const newReview = { name, text, rating: parseInt(rating), recommend };
-      
-      const saved = JSON.parse(localStorage.getItem('alix_reviews') || '[]');
-      saved.unshift(newReview);
-      localStorage.setItem('alix_reviews', JSON.stringify(saved));
-      
-      form.reset();
-      document.getElementById('form-message').style.display = 'block';
-      setTimeout(() => { document.getElementById('form-message').style.display = 'none'; }, 4000);
-      renderReviews();
-    });
+    function createReviewCard(review) {
+      const card = document.createElement('article');
+      card.className = 'review-item';
+      const content = document.createElement('div');
+      const stars = document.createElement('div');
+      stars.className = 'rev-stars';
+      stars.setAttribute('aria-label', 'Calificación: ' + Number(review.rating) + ' de 5');
+      for (let i = 1; i <= 5; i += 1) {
+        const star = document.createElement('i');
+        star.className = 'fa-solid fa-star';
+        if (i > Number(review.rating)) star.style.color = '#444';
+        star.setAttribute('aria-hidden', 'true');
+        stars.appendChild(star);
+      }
+      const comment = document.createElement('p');
+      comment.className = 'rev-text';
+      comment.textContent = '"' + review.text + '"';
+      const footer = document.createElement('div');
+      const author = document.createElement('div');
+      author.className = 'rev-author';
+      author.textContent = '- ' + review.name;
+      footer.appendChild(author);
+      if (review.recommend) {
+        const recommendation = document.createElement('div');
+        recommendation.className = 'rev-rec';
+        const check = document.createElement('i');
+        check.className = 'fa-solid fa-circle-check';
+        check.setAttribute('aria-hidden', 'true');
+        recommendation.append(check, document.createTextNode(' Recomienda este servicio'));
+        footer.appendChild(recommendation);
+      }
+      content.append(stars, comment);
+      card.append(content, footer);
+      return card;
+    }
 
+    function renderReviews() {
+      const saved = readSavedReviews();
+      const allReviews = [...saved, ...defaultReviews];
+      countSpan.textContent = String(allReviews.length);
+      grid.replaceChildren(...allReviews.map(createReviewCard));
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const name = document.getElementById('rev-name').value.trim();
+      const comment = document.getElementById('rev-text').value.trim();
+      const rating = Number(document.querySelector('input[name="rating"]:checked')?.value);
+      const recommend = document.getElementById('rec-yes').checked;
+      if (!name || !comment || !Number.isInteger(rating) || rating < 1 || rating > 5) {
+        message.textContent = 'Completa tu nombre, comentario y calificación.';
+        message.style.display = 'block';
+        return;
+      }
+      const saved = readSavedReviews();
+      saved.unshift({ name, text: comment, rating, recommend });
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(saved.slice(0, 100)));
+        form.reset();
+        message.textContent = 'Gracias. Tu opinión quedó guardada en este navegador; no se ha enviado a un servidor.';
+        message.style.display = 'block';
+        renderReviews();
+      } catch (error) {
+        console.error('No fue posible guardar la opinión.', error);
+        message.textContent = 'No se pudo guardar la opinión en este dispositivo. Inténtalo nuevamente.';
+        message.style.display = 'block';
+      }
+    });
     // Iniciar reseñas al cargar
     renderReviews();
   </script>
