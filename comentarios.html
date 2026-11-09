@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="description" content="Lee las experiencias y opiniones compartidas por pacientes de la Dra. Alix Camacho C.">
+  <title>Opiniones de pacientes | Dra. Alix Camacho C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--bg:#090a0d;--panel:#13161c;--gold:#dfb747;--gold-light:#f5e4ab;--text:#f1eee5;--muted:#b7b3a8;--line:rgba(223,183,71,.24)}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,rgba(184,130,25,.16),transparent 38rem),var(--bg);color:var(--text);font:15px/1.7 Montserrat,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+    .topbar{border-bottom:1px solid rgba(223,183,71,.16);padding:14px 0}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-family:Cinzel,Georgia,serif;color:var(--gold);font-size:14px}.back{color:var(--gold-light);font-size:13px}.back:hover{color:#fff}
+    main{padding:60px 0 70px}.intro{text-align:center;max-width:760px;margin:0 auto 38px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.intro h1{font:500 clamp(2.2rem,6vw,3.8rem)/1.15 'Playfair Display',Georgia,serif;margin:14px 0}.intro h1 span{color:var(--gold)}.intro p{color:var(--muted);max-width:640px;margin:auto}.summary{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px auto 0;padding:13px 20px;width:max-content;max-width:100%;border:1px solid var(--line);border-radius:999px;background:rgba(223,183,71,.06);color:var(--gold-light);font-size:13px}.summary i{color:var(--gold)}
+    .reviews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.review{position:relative;padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(23,27,34,.94),rgba(14,16,21,.96));box-shadow:0 16px 34px rgba(0,0,0,.2);transition:transform .2s,border-color .2s}.review:hover{transform:translateY(-3px);border-color:rgba(223,183,71,.5)}.quote-icon{font-size:20px;color:var(--gold);opacity:.85}.review blockquote{margin:12px 0 20px;font:italic 17px/1.75 'Playfair Display',Georgia,serif;color:#f0ede6;white-space:pre-line}.review footer{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.07);padding-top:15px}.avatar{flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(223,183,71,.12);border:1px solid var(--line);color:var(--gold);font-weight:700}.author{font-size:13px;font-weight:700;color:var(--gold-light)}.meta{font-size:11px;color:var(--muted)}.badge{margin-left:auto;color:var(--muted);font-size:10px;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 9px}
+    .form-section{margin:52px auto 0;max-width:700px;padding:28px;border:1px solid var(--line);border-radius:20px;background:rgba(19,22,28,.88)}.form-section h2{font:500 27px 'Playfair Display',Georgia,serif;margin:0 0 5px}.form-section>p{color:var(--muted);font-size:13px;margin:0 0 22px}.field{margin-bottom:16px}.field label{display:block;color:var(--gold-light);font-size:12px;font-weight:600;margin-bottom:7px}.field input,.field textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.13);border-radius:10px;background:#0b0d11;color:var(--text);font:inherit}.field input:focus,.field textarea:focus{outline:2px solid rgba(223,183,71,.4);border-color:var(--gold)}.stars{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:5px;width:max-content}.stars input{position:absolute;opacity:0;pointer-events:none}.stars label{font-size:22px;color:#68645b;cursor:pointer}.stars label:hover,.stars label:hover~label,.stars input:checked~label{color:var(--gold)}.submit{border:0;border-radius:999px;background:linear-gradient(135deg,#f3da85,#d9a932 45%,#aa7416);padding:12px 22px;color:#171108;font-weight:700;cursor:pointer}.submit:hover{filter:brightness(1.08)}.notice{margin:14px 0 0;color:var(--muted);font-size:11px}.feedback{display:none;margin-top:12px;color:#9be2a5;font-size:13px}.bottom-link{text-align:center;margin-top:28px}.bottom-link a{color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:10px 18px;display:inline-block}
+    @media(max-width:680px){.topbar .wrap{align-items:flex-start;flex-direction:column}.reviews{grid-template-columns:1fr}main{padding-top:42px}.review{padding:21px}.form-section{padding:22px 18px}.summary{white-space:normal;text-align:center;border-radius:16px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><a class="brand" href="index.html">Dra. Alix Camacho C.</a><a class="back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Volver a la página principal</a></div></div>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <span class="eyebrow"><i class="fa-regular fa-heart"></i> Experiencias compartidas</span>
+      <h1 id="page-title">Lo que dicen nuestros <span>pacientes</span></h1>
+      <p>Gracias a cada persona que nos comparte su experiencia y nos permite acompañarla en el cuidado de su sonrisa.</p>
+      <div class="summary"><i class="fa-solid fa-comments"></i> Testimonios de pacientes · Opiniones compartidas</div>
+    </section>
+
+    <section class="reviews" aria-label="Testimonios de pacientes">
+      <article class="review"><i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i><blockquote>“Si alguien me pregunta sobre el tratamiento y el manejo de cada especialista, lo recomendaría en todo momento, ya que con ellos encontramos la mejor presentación visual de cada persona. Me pareció excelente el servicio. ¡Excelente! 👍”</blockquote><footer><span class="avatar" aria-hidden="true">P</span><div><div class="author">Paciente</div><div class="meta">Testimonio compartido</div></div><span class="badge">Experiencia</span></footer></article>
+      <article class="review"><i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i><blockquote>“Me pareció excelente el servicio. ¡Excelente! 👍”</blockquote><footer><span class="avatar" aria-hidden="true">S</span><div><div class="author">Sandra</div><div class="meta">Testimonio compartido</div></div><span class="badge">Experiencia</span></footer></article>
+      <article class="review"><i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i><blockquote>“Pedí una cita en mi EPS de odontología y tuve la fortuna de que me atendiera la doctora Alix; eso me cambió la vida. Tenía muchos traumas con odontólogos anteriores.
+
+Gracias a ella conocí al doctor Evelio, su papá, quien con su calidad humana y experiencia me ayudó a volver a confiar y a quitarme el miedo a la odontología.
+
+Gracias infinitas a mi doctora Alix, al doctor Evelio y a la señora Consuelo. He recuperado mi confianza al reírme. ¡Bendiciones! 😘”</blockquote><footer><span class="avatar" aria-hidden="true">R</span><div><div class="author">Rosa Elvira Quiroz Gutiérrez</div><div class="meta">Testimonio compartido</div></div><span class="badge">Experiencia</span></footer></article>
+      <article class="review"><i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i><blockquote>“La mejor odontóloga ❤️”</blockquote><footer><span class="avatar" aria-hidden="true">N</span><div><div class="author">Natalia Bedoya</div><div class="meta">Testimonio compartido</div></div><span class="badge">Experiencia</span></footer></article>
+      <article class="review"><i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i><blockquote>“¡La calidad humana de la odontóloga es lo mejor! Y los materiales que utiliza siempre son de la mejor calidad. ¡Súper recomendadísima!”</blockquote><footer><span class="avatar" aria-hidden="true">N</span><div><div class="author">Natalia Bedoya</div><div class="meta">Testimonio compartido</div></div><span class="badge">Experiencia</span></footer></article>
+      <article class="review"><i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i><blockquote>“Es una excelente profesional y un gran ser humano. Me fue muy bien con su tratamiento.”</blockquote><footer><span class="avatar" aria-hidden="true">M</span><div><div class="author">Mayrlen Judith Agudelo</div><div class="meta">Testimonio compartido</div></div><span class="badge">Experiencia</span></footer></article>
+    </section>
+
+    <section class="form-section" aria-labelledby="form-title">
+      <h2 id="form-title">Comparte tu experiencia</h2>
+      <p>Tu opinión puede ayudar a otras personas a conocer el tipo de atención que ofrecemos.</p>
+      <form id="review-form">
+        <div class="field"><label for="review-name">Nombre</label><input id="review-name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="¿Cómo te llamas?" required></div>
+        <div class="field"><label>Calificación</label><div class="stars" role="radiogroup" aria-label="Calificación de una a cinco estrellas">
+          <input type="radio" name="rating" id="rating-5" value="5" required><label for="rating-5" aria-label="5 estrellas">★</label>
+          <input type="radio" name="rating" id="rating-4" value="4"><label for="rating-4" aria-label="4 estrellas">★</label>
+          <input type="radio" name="rating" id="rating-3" value="3"><label for="rating-3" aria-label="3 estrellas">★</label>
+          <input type="radio" name="rating" id="rating-2" value="2"><label for="rating-2" aria-label="2 estrellas">★</label>
+          <input type="radio" name="rating" id="rating-1" value="1"><label for="rating-1" aria-label="1 estrella">★</label>
+        </div></div>
+        <div class="field"><label for="review-text">Comentario</label><textarea id="review-text" name="text" rows="4" maxlength="600" placeholder="Cuéntanos cómo fue tu experiencia..." required></textarea></div>
+        <button class="submit" type="submit"><i class="fa-regular fa-paper-plane"></i> Guardar comentario</button>
+        <div class="feedback" id="feedback" role="status">Gracias por compartir tu opinión.</div>
+        <p class="notice">Nota: este formulario guarda el comentario solo en el navegador de este dispositivo; no lo publica ni lo envía a la clínica. Para compartir una opinión públicamente, contáctanos directamente.</p>
+      </form>
+    </section>
+    <div class="bottom-link"><a href="index.html">Volver a la página principal</a></div>
+  </main>
+  <script>
+    const form=document.getElementById('review-form');
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      const entry={name:document.getElementById('review-name').value.trim(),text:document.getElementById('review-text').value.trim(),rating:Number(new FormData(form).get('rating')),createdAt:new Date().toISOString()};
+      try{
+        const entries=JSON.parse(localStorage.getItem('alix_private_feedback')||'[]');
+        entries.unshift(entry);
+        localStorage.setItem('alix_private_feedback',JSON.stringify(entries));
+        document.getElementById('feedback').style.display='block';
+        form.reset();
+      }catch(error){
+        document.getElementById('feedback').textContent='No fue posible guardar el comentario en este navegador.';
+        document.getElementById('feedback').style.display='block';
+      }
+    });
+  </script>
+</body>
+</html>
