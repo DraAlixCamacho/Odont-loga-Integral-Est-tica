@@ -120,6 +120,36 @@
     a[href*="instagram.com"]:hover .fa-instagram{transform:rotate(-12deg) scale(1.15)}
     @media(prefers-reduced-motion:reduce){a[href*="wa.me"],a[href*="wa.me"] .fa-whatsapp,.ig-btn{animation:none!important}a[href*="instagram.com"],a[href*="instagram.com"] .fa-instagram{transition:none!important}}
 
+    /* MICROINTERACCIONES PREMIUM: enlaces, retrato, nombre y logo */
+    @keyframes goldHalo{0%,100%{box-shadow:0 0 0 3px rgba(212,175,55,.08),0 0 18px rgba(212,175,55,.18)}50%{box-shadow:0 0 0 5px rgba(212,175,55,.16),0 0 30px rgba(249,223,159,.38)}}
+    @keyframes portraitHalo{0%,100%{box-shadow:0 0 0 1px rgba(212,175,55,.55),0 0 22px rgba(212,175,55,.2),0 0 42px rgba(212,175,55,.08)}50%{box-shadow:0 0 0 3px rgba(249,223,159,.8),0 0 34px rgba(212,175,55,.42),0 0 58px rgba(212,175,55,.16)}}
+    @keyframes nameShimmer{0%,100%{background-position:0% 50%;filter:drop-shadow(0 0 0 rgba(212,175,55,0))}50%{background-position:100% 50%;filter:drop-shadow(0 0 8px rgba(212,175,55,.32))}}
+    @keyframes linkShine{0%{transform:translateX(-150%) skewX(-18deg)}55%,100%{transform:translateX(250%) skewX(-18deg)}}
+    .monogram{position:relative;animation:goldHalo 3.8s ease-in-out infinite;transition:transform .35s ease,filter .35s ease}
+    .brand:hover .monogram{transform:rotate(-5deg) scale(1.07);filter:brightness(1.18)}
+    .brand strong{background-image:linear-gradient(110deg,#f9df9f 0%,#d4af37 35%,#fff1c7 50%,#aa8529 70%,#f9df9f 100%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:nameShimmer 5s ease-in-out infinite;transition:letter-spacing .3s ease}
+    .brand:hover strong{letter-spacing:.16em}
+    .portrait{position:relative;isolation:isolate;animation:portraitHalo 3.6s ease-in-out infinite;transition:transform .4s ease,filter .4s ease}
+    .portrait::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(249,223,159,.45);opacity:.65;z-index:-1;transition:inset .4s ease,opacity .4s ease}
+    .portrait img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s ease}
+    .doctor-card:hover .portrait{transform:translateY(-4px) scale(1.025);filter:brightness(1.06)}
+    .doctor-card:hover .portrait::before{inset:-11px;opacity:1}
+    .doctor-card h2{background-image:linear-gradient(110deg,#f9df9f 0%,#d4af37 35%,#fff4d5 50%,#aa8529 70%,#f9df9f 100%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:nameShimmer 5s ease-in-out infinite;transition:letter-spacing .35s ease,filter .35s ease}
+    .doctor-card:hover h2{letter-spacing:.09em;filter:drop-shadow(0 0 9px rgba(212,175,55,.3))}
+    .button,.ig-btn{position:relative;isolation:isolate;overflow:hidden;transition:transform .3s ease,filter .3s ease,box-shadow .3s ease}
+    .button::after,.ig-btn::after{content:"";position:absolute;inset:-35% auto -35% -45%;width:32%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-150%) skewX(-18deg);pointer-events:none}
+    .button:hover::after,.ig-btn:hover::after{animation:linkShine .85s ease}
+    .button:hover,.ig-btn:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.12)}
+    .button:active,.ig-btn:active{transform:translateY(0) scale(.98)}
+    nav a,.top a,footer a{position:relative;transition:color .25s ease,text-shadow .25s ease,transform .25s ease}
+    nav a:hover,.top a:hover,footer a:hover{color:var(--gold-light);text-shadow:0 0 12px rgba(212,175,55,.4);transform:translateY(-1px)}
+    @media(prefers-reduced-motion:reduce){
+      .monogram,.brand strong,.portrait,.doctor-card h2{animation:none!important}
+      .button::after,.ig-btn::after{display:none}
+      .brand:hover .monogram,.doctor-card:hover .portrait,.button:hover,.ig-btn:hover{transform:none}
+      .portrait img{transition:none}
+    }
+
     .section{padding:78px 0;border-top:1px solid var(--line)}
     .section-heading{text-align:center;max-width:760px;margin:0 auto 42px}
     .section-heading h2{font-size:clamp(28px,4vw,46px);margin:13px 0;letter-spacing:.02em}
