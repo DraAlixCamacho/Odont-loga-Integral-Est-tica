@@ -706,4 +706,92 @@
       const card = document.createElement('article');
       card.className = 'review-item';
       const content = document.createElement('div');
-      const stars = document
+      const stars = document.createElement('div');
+      stars.className = 'rev-stars';
+      stars.setAttribute('aria-label', 'Calificación: ' + Number(review.rating) + ' de 5');
+      for (let i = 1; i <= 5; i += 1) {
+        const star = document.createElement('i');
+        star.className = 'fa-solid fa-star';
+        if (i > Number(review.rating)) star.style.color = '#444';
+        star.setAttribute('aria-hidden', 'true');
+        stars.appendChild(star);
+      }
+      const comment = document.createElement('p');
+      comment.className = 'rev-text';
+      comment.textContent = '"' + review.text + '"';
+      const footer = document.createElement('div');
+      const author = document.createElement('div');
+      author.className = 'rev-author';
+      author.textContent = '- ' + review.name;
+      footer.appendChild(author);
+      if (review.recommend) {
+        const recommendation = document.createElement('div');
+        recommendation.className = 'rev-rec';
+        const check = document.createElement('i');
+        check.className = 'fa-solid fa-circle-check';
+        check.setAttribute('aria-hidden', 'true');
+        recommendation.append(check, document.createTextNode(' Recomienda este servicio'));
+        footer.appendChild(recommendation);
+      }
+      content.append(stars, comment);
+      card.append(content, footer);
+      return card;
+    }
+
+    function renderReviews() {
+      const saved = readSavedReviews();
+      const allReviews = [...saved, ...defaultReviews];
+      countSpan.textContent = String(allReviews.length);
+      grid.replaceChildren(...allReviews.map(createReviewCard));
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const name = document.getElementById('rev-name').value.trim();
+      const comment = document.getElementById('rev-text').value.trim();
+      const rating = Number(document.querySelector('input[name="rating"]:checked')?.value);
+      const recommend = document.getElementById('rec-yes').checked;
+      if (!name || !comment || !Number.isInteger(rating) || rating < 1 || rating > 5) {
+        message.textContent = 'Completa tu nombre, comentario y calificación.';
+        message.style.display = 'block';
+        return;
+      }
+      const saved = readSavedReviews();
+      saved.unshift({ name, text: comment, rating, recommend });
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(saved.slice(0, 100)));
+        form.reset();
+        message.textContent = 'Gracias. Tu opinión quedó guardada en este navegador; no se ha enviado a un servidor.';
+        message.style.display = 'block';
+        renderReviews();
+      } catch (error) {
+        console.error('No fue posible guardar la opinión.', error);
+        message.textContent = 'No se pudo guardar la opinión en este dispositivo. Inténtalo nuevamente.';
+        message.style.display = 'block';
+      }
+    });
+
+    renderReviews();
+
+    // Lógica del Reproductor de Música
+    const audio = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
+    const btnText = toggleBtn.querySelector(".text");
+    
+    audio.volume = 0.2; // Volumen suave inicial
+
+    toggleBtn.addEventListener("click", function() {
+      if (audio.paused) {
+        audio.play();
+        toggleBtn.classList.add("playing");
+        btnText.textContent = "Pausar música";
+      } else {
+        audio.pause();
+        toggleBtn.classList.remove("playing");
+        btnText.textContent = "Activar música";
+      }
+    });
+  </script>
+</body>
+</html>
