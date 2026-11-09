@@ -185,7 +185,10 @@
     .case-card h3{font-size:16px;color:var(--gold);margin-bottom:8px;letter-spacing:.04em}
     .case-card p{font-size:12px;color:#b8b8b8;margin:0;line-height:1.6}
     
-    .review-proof{max-width:760px;margin:0 auto 34px;text-align:center;border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--panel);box-shadow:0 12px 35px rgba(0,0,0,.35)}\n    .review-proof img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;border-radius:9px}\n    .review-proof figcaption{color:var(--muted);font-size:11px;padding:10px 4px 2px}\n    .qr-container{max-width:600px;margin:0 auto;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel2);padding:15px;box-shadow:0 12px 35px rgba(0,0,0,.6)}
+    .review-proof{max-width:760px;margin:0 auto 34px;text-align:center;border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--panel);box-shadow:0 12px 35px rgba(0,0,0,.35)}
+    .review-proof img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;border-radius:9px}
+    .review-proof figcaption{color:var(--muted);font-size:11px;padding:10px 4px 2px}
+    .qr-container{max-width:600px;margin:0 auto;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel2);padding:15px;box-shadow:0 12px 35px rgba(0,0,0,.6)}
     .qr-container img{width:100%;display:block;border-radius:8px}
     
     /* Reviews y Opiniones */
@@ -229,7 +232,8 @@
     
     @media(max-width:900px){nav{gap:12px}nav a{font-size:9px}.desktop-cta{display:none}.hero-grid{gap:32px}.services{grid-template-columns:repeat(2,1fr)}.reviews-container{grid-template-columns:1fr}}
     @media(max-width:680px){.wrap{width:min(var(--max),calc(100% - 30px))}.top .wrap{justify-content:center;text-align:center}.top-links{justify-content:center}header{height:68px}nav{display:none;position:absolute;left:0;right:0;top:67px;padding:20px 24px;background:#0d0f14;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:16px;box-shadow:0 10px 20px rgba(0,0,0,.7)}nav.open{display:flex}nav a{font-size:11px}.mobile-toggle{display:block}.hero{padding:56px 0}.hero-grid{grid-template-columns:1fr;gap:38px}.hero-copy{text-align:center}.lead{margin:auto}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}.actions{justify-content:center}.address-line{line-height:2}.doctor-card{max-width:420px;margin:auto}.section{padding:58px 0}.grid3{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr;gap:11px}.services .card{padding:16px}.services .card h3{font-size:14px}.location img{height:170px}.contact-row .button{width:100%}}
-    @media(max-width:680px){.cases-grid{grid-template-columns:1fr;gap:18px}.case-img-wrap{min-height:190px}.review-proof{margin-bottom:26px;padding:8px}}\n    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    @media(max-width:680px){.cases-grid{grid-template-columns:1fr;gap:18px}.case-img-wrap{min-height:190px}.review-proof{margin-bottom:26px;padding:8px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
@@ -402,22 +406,10 @@
             <div class="case-img-wrap"><img src="Gingivoplastia.jpeg" alt="Caso de estética gingival" loading="lazy" decoding="async"></div>
             <div class="case-content"><h3>Estética gingival</h3><p>Contorno de encías y proporción de la sonrisa según las necesidades clínicas.</p></div>
           </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="SONRISA.jpg" alt="Fotografía de sonrisa de paciente" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Sonrisas naturales</h3><p>La estética dental busca equilibrio, naturalidad y salud oral.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="COM MARIA.jpg" alt="Caso o experiencia clínica de María" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Experiencia clínica · María</h3><p>Una muestra del trabajo y la atención personalizada en consulta.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="GERALDINE.jpg" alt="Caso o experiencia clínica de Geraldine" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Experiencia clínica · Geraldine</h3><p>Cada sonrisa se aborda de forma individual, priorizando salud y función.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="VANESSA.jpg" alt="Caso o experiencia clínica de Vanessa" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Experiencia clínica · Vanessa</h3><p>Atención cercana y planificación de acuerdo con cada paciente.</p></div>
-          </article>
+          
+          
+          
+          
           <article class="case-card">
             <div class="case-img-wrap split">
               <img src="antes de David.jpg" alt="Registro previo del caso David" loading="lazy" decoding="async">
@@ -444,7 +436,7 @@
           <p>Conozca la experiencia de quienes ya han confiado en nosotros y déjenos su calificación.</p>
         </div>
         
-        <figure class="review-proof"><img src="5COMENTARIOS.jpg" alt="Imagen recopilatoria de cinco comentarios de pacientes" loading="lazy" decoding="async"><figcaption>Comentarios y experiencias compartidas por pacientes.</figcaption></figure>
+        <figure class="review-proof"><img src="5COMENTARIOS.jpg" alt="Imagen recopilatoria de cinco comentarios de pacientes" loading="lazy" decoding="async"><figcaption>Reseñas compartidas por pacientes. Los comentarios de la imagen también están transcritos a continuación; se muestran solo nombres de pila para cuidar su privacidad.</figcaption></figure>
         <div class="reviews-container">
           <div class="review-form-box">
             <h3>¿Cómo fue tu experiencia?</h3>
@@ -569,11 +561,17 @@
     nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<i class="fa-solid fa-bars"></i>';}));
 
     // Sistema de Reseñas y Comentarios
+    // Opiniones transcritas de los mensajes y comentarios compartidos.
+    // Se muestran solo los nombres de pila para proteger la privacidad de los pacientes.
     const defaultReviews = [
-      { name: "Familia Bedoya", rating: 5, text: "Si la hubiera conocido antes, nos hubiéramos ahorrado muchos dolores de cabeza. Nos atiende a toda la familia.", recommend: true },
-      { name: "Paciente Verificado", rating: 5, text: "Me quedó excelente el color de mis carillas y me siento muy bien con la mordida.", recommend: true },
-      { name: "Paciente Verificado", rating: 5, text: "Excelentes profesionales, siempre brindando el mejor servicio.", recommend: true },
-      { name: "Paciente Verificado", rating: 5, text: "Excelente Profesional, muy buena, apasionada en lo que hace.", recommend: true }
+      { name: "Sandra", rating: 5, text: "Recomendaría el tratamiento y el manejo de cada especialista. Me pareció excelente el servicio y la presentación visual del trabajo.", recommend: true },
+      { name: "Rosa", rating: 5, text: "Pedí una cita por mi EPS y tuve la fortuna de ser atendida por la doctora Alix. Después de experiencias difíciles con otros odontólogos, recuperé la confianza y perdí el miedo a la odontología. Gracias por su calidad humana y por ayudarme a volver a sonreír.", recommend: true },
+      { name: "Natalia", rating: 5, text: "La mejor odontóloga. Su calidad humana es lo mejor y los materiales que utiliza son siempre de excelente calidad. ¡Súper recomendada!", recommend: true },
+      { name: "Mayrlen", rating: 5, text: "Es una excelente profesional y un gran ser humano. Me fue muy bien con su tratamiento.", recommend: true },
+      { name: "María", rating: 5, text: "Me quedó excelente el color de las carillas y me siento muy bien con la mordida. Doctora, es la mejor odontóloga que he tenido por su profesionalismo y entrega. Mil gracias nuevamente. Siempre la buscaré y recomendaré.", recommend: true },
+      { name: "Geraldine", rating: 5, text: "Excelente profesional, muy buena y apasionada en lo que hace.", recommend: true },
+      { name: "Vanessa", rating: 5, text: "¡Excelentes profesionales! Siempre brindando el mejor servicio.", recommend: true },
+      { name: "Familia Bedoya", rating: 5, text: "Si la hubiéramos conocido antes, nos habríamos ahorrado muchos dolores de cabeza. Nos atiende a toda la familia.", recommend: true }
     ];
 
     const grid = document.getElementById('reviews-grid');
