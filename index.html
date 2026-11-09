@@ -60,7 +60,7 @@
     header{height:76px;position:sticky;top:0;z-index:5;background:rgba(3,4,6,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
     header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}
     .brand{text-decoration:none;display:flex;align-items:center;gap:12px}
-    .monogram{width:52px;height:52px;flex:0 0 52px;box-sizing:border-box;border:1.5px solid rgba(212,175,55,.8);border-radius:50%;display:block;object-fit:contain;object-position:center;padding:5px;background:radial-gradient(circle at 50% 45%,#242424 0%,#090909 72%);box-shadow:0 0 0 3px rgba(212,175,55,.08),0 0 18px rgba(212,175,55,.16);overflow:hidden}
+    .monogram{width:52px;height:52px;flex:0 0 52px;box-sizing:border-box;border:1.5px solid rgba(212,175,55,.8);border-radius:50%;display:block;object-fit:contain;object-position:center;padding:5px}
     .brand strong{display:block;font:600 16px Cinzel,serif;letter-spacing:.12em}
     .brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.18em;text-transform:uppercase}
     
@@ -104,7 +104,7 @@
     .branches span{font-size:10px;color:var(--muted)}
     
     /* BOTÓN IG - DISEÑO INTACTO */
-    .ig-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:999px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff!important;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;box-shadow:0 6px 20px rgba(220,39,67,.25);transition:transform .2s;border:none;cursor:pointer}
+    .ig-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:999px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;box-shadow:0 6px 24px rgba(220,39,67,.25);transition:all .3s ease}
     .ig-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
 
     /* Enlaces sociales con movimiento sutil y accesible */
@@ -121,19 +121,19 @@
     
     /* MICROINTERACCIONES PREMIUM: enlaces, retrato, nombre y logo */
     @keyframes goldHalo{0%,100%{box-shadow:0 0 0 3px rgba(212,175,55,.08),0 0 18px rgba(212,175,55,.18)}50%{box-shadow:0 0 0 5px rgba(212,175,55,.16),0 0 30px rgba(249,223,159,.38)}}
-    @keyframes portraitHalo{0%,100%{box-shadow:0 0 0 1px rgba(212,175,55,.55),0 0 22px rgba(212,175,55,.2),0 0 42px rgba(212,175,55,.08)}50%{box-shadow:0 0 0 3px rgba(249,223,159,.8),0 0 34px rgba(212,175,55,.42),0 0 58px rgba(212,175,55,.16)}}
+    @keyframes portraitHalo{0%,100%{box-shadow:0 0 0 1px rgba(212,175,55,.55),0 0 22px rgba(212,175,55,.2),0 0 42px rgba(212,175,55,.08)}50%{box-shadow:0 0 0 3px rgba(249,223,159,.8),0 0 34px rgba(212,175,55,.4),0 0 55px rgba(212,175,55,.18)}}
     @keyframes nameShimmer{0%,100%{background-position:0% 50%;filter:drop-shadow(0 0 0 rgba(212,175,55,0))}50%{background-position:100% 50%;filter:drop-shadow(0 0 8px rgba(212,175,55,.32))}}
     @keyframes linkShine{0%{transform:translateX(-150%) skewX(-18deg)}55%,100%{transform:translateX(250%) skewX(-18deg)}}
     .monogram{position:relative;animation:goldHalo 3.8s ease-in-out infinite;transition:transform .35s ease,filter .35s ease}
     .brand:hover .monogram{transform:rotate(-5deg) scale(1.07);filter:brightness(1.18)}
-    .brand strong{background-image:linear-gradient(110deg,#f9df9f 0%,#d4af37 35%,#fff1c7 50%,#aa8529 70%,#f9df9f 100%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:nameShimmer 5s ease-in-out infinite;transition:letter-spacing .3s ease}
+    .brand strong{background-image:linear-gradient(110deg,#f9df9f 0%,#d4af37 35%,#fff1c7 50%,#aa8529 70%,#f9df9f 100%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:nameShimmer 5s ease-in-out infinite}
     .brand:hover strong{letter-spacing:.16em}
     .portrait{position:relative;isolation:isolate;animation:portraitHalo 3.6s ease-in-out infinite;transition:transform .4s ease,filter .4s ease}
     .portrait::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(249,223,159,.45);opacity:.65;z-index:-1;transition:inset .4s ease,opacity .4s ease}
     .portrait img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s ease}
     .doctor-card:hover .portrait{transform:translateY(-4px) scale(1.025);filter:brightness(1.06)}
     .doctor-card:hover .portrait::before{inset:-11px;opacity:1}
-    .doctor-card h2{background-image:linear-gradient(110deg,#f9df9f 0%,#d4af37 35%,#fff4d5 50%,#aa8529 70%,#f9df9f 100%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:nameShimmer 5s ease-in-out infinite;transition:letter-spacing .35s ease,filter .35s ease}
+    .doctor-card h2{background-image:linear-gradient(110deg,#f9df9f 0%,#d4af37 35%,#fff4d5 50%,#aa8529 70%,#f9df9f 100%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:nameShimmer 5s ease-in-out infinite}
     .doctor-card:hover h2{letter-spacing:.09em;filter:drop-shadow(0 0 9px rgba(212,175,55,.3))}
     .button,.ig-btn{position:relative;isolation:isolate;overflow:hidden;transition:transform .3s ease,filter .3s ease,box-shadow .3s ease}
     .button::after,.ig-btn::after{content:"";position:absolute;inset:-35% auto -35% -45%;width:32%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-150%) skewX(-18deg);pointer-events:none}
@@ -225,7 +225,7 @@
     .review-form-box{background:linear-gradient(145deg,rgba(20, 24, 30, .9),rgba(10, 12, 16, .8));border:1px solid var(--line);border-radius:16px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
     .review-form-box h3{font-size:17px;margin-bottom:20px;color:var(--gold);font-family:Cinzel,serif;letter-spacing:.03em}
     .form-group{margin-bottom:16px}
-    .form-group input[type="text"], .form-group textarea{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px;color:var(--text);font-family:inherit;font-size:12px;transition:border-color .3s}
+    .form-group input[type="text"], .form-group textarea{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px;color:var(--text);font-family:inherit;font-size:12px}
     .form-group input[type="text"]:focus, .form-group textarea:focus{outline:none;border-color:var(--gold)}
     .rating-input{display:flex;align-items:center;justify-content:space-between;gap:10px}
     .rating-input label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
@@ -242,7 +242,7 @@
     .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-height:500px;overflow-y:auto;padding-right:10px}
     .reviews-grid::-webkit-scrollbar{width:6px}
     .reviews-grid::-webkit-scrollbar-thumb{background:rgba(212, 175, 55, .3);border-radius:10px}
-    .review-item{background:rgba(20, 24, 30, .5);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);box-shadow:0 4px 15px rgba(0,0,0,.3)}
+    .review-item{background:rgba(20, 24, 30, .5);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
     .review-item:hover{transform:translateY(-4px);border-color:rgba(212, 175, 55, .5);box-shadow:0 8px 20px rgba(0,0,0,.5)}
     .rev-stars{color:var(--gold);font-size:11px;margin-bottom:10px;letter-spacing:1px}
     .rev-text{font-size:13px;line-height:1.6;margin-bottom:15px;font-style:italic;color:#d4d4d4}
@@ -304,7 +304,7 @@
       .top .wrap{justify-content:center;text-align:center}
       .top-links{justify-content:center}
       header{height:68px}
-      nav{display:none;position:absolute;left:0;right:0;top:67px;padding:20px 24px;background:#0d0f14;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:16px;box-shadow:0 10px 20px rgba(0,0,0,.7)}
+      nav{display:none;position:absolute;left:0;right:0;top:67px;padding:20px 24px;background:#0d0f14;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:16px;box-shadow:0 12px 22px #0009}
       nav.open{display:flex}
       nav a{font-size:11px}
       .mobile-toggle{display:block}
@@ -383,7 +383,7 @@
         <div class="hero-copy">
           <span class="eyebrow"><i class="fa-solid fa-tooth"></i> Odontología de alta precisión y biocompatible</span>
           <h1>Sonrisas radiantes,<br>respaldadas por la<br><em class="gold">evidencia científica</em></h1>
-          <p class="lead">Atención odontológica integral y estética personalizada con criterio clínico, rigor y calidez humana. Más de 18 años de ejercicio profesional al servicio de la salud y la confianza de cada paciente.</p>
+          <p class="lead">Atención odontológica integral y estética personalizada con criterio clínico, rigor y calidez humana. Más de 18 años de ejercicio profesional al servicio de la salud y bienestar de sus pacientes.</p>
           <div class="stats">
             <div class="stat"><b>+18 años</b><span>Experiencia clínica</span></div>
             <div class="stat"><b>UdeA &amp; CES</b><span>Formación profesional</span></div>
@@ -447,46 +447,14 @@
           <p>Solicite una valoración para conocer las alternativas indicadas para su caso.</p>
         </div>
         <div class="grid3 services">
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h3>Diseño de sonrisa</h3>
-            <p>Planeación estética personalizada con evaluación de la función y las características dentales.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-regular fa-gem"></i></div>
-            <h3>Aclaramiento dental</h3>
-            <p>Opciones de aclaramiento bajo valoración y acompañamiento profesional.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-crown"></i></div>
-            <h3>Rehabilitación oral</h3>
-            <p>Coronas, incrustaciones y prótesis para recuperar función y armonía dental.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-sparkles"></i></div>
-            <h3>Resinas estéticas</h3>
-            <p>Restauraciones que buscan integrarse de forma natural con la sonrisa.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Placas para bruxismo</h3>
-            <p>Dispositivos personalizados según valoración de la mordida y articulación.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-person-running"></i></div>
-            <h3>Protectores deportivos</h3>
-            <p>Protección bucal para actividades deportivas, confeccionada a medida.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-hands-bubbles"></i></div>
-            <h3>Higiene oral</h3>
-            <p>Prevención y cuidado periodontal ajustados a la evaluación clínica.</p>
-          </article>
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-            <h3>Valoración general</h3>
-            <p>Consulta para diagnóstico y orientación sobre alternativas de tratamiento.</p>
-          </article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Diseño de sonrisa</h3><p>Planeación estética personalizada con evaluación de la función y las características dentales.</p></article>
+          <article class="card"><div class="icon"><i class="fa-regular fa-gem"></i></div><h3>Aclaramiento dental</h3><p>Opciones de aclaramiento bajo valoración y acompañamiento profesional.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-crown"></i></div><h3>Rehabilitación oral</h3><p>Coronas, incrustaciones y prótesis para recuperar función y armonía dental.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-sparkles"></i></div><h3>Resinas estéticas</h3><p>Restauraciones que buscan integrarse de forma natural con la sonrisa.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Placas para bruxismo</h3><p>Dispositivos personalizados según valoración de la mordida y articulación.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-person-running"></i></div><h3>Protectores deportivos</h3><p>Protección bucal para actividades deportivas, confeccionada a medida.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-hands-bubbles"></i></div><h3>Higiene oral</h3><p>Prevención y cuidado periodontal ajustados a la evaluación clínica.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-stethoscope"></i></div><h3>Valoración general</h3><p>Consulta para diagnóstico y orientación sobre alternativas de tratamiento.</p></article>
         </div>
       </div>
     </section>
@@ -499,35 +467,13 @@
           <h2>Portafolio de <span class="gold">Resultados</span></h2>
           <p>Excelencia en cada detalle. Desliza para explorar la transformación estética y funcional.</p>
         </div>
-        
         <div class="cases-grid">
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="SONRISA.jpg" alt="Resultado estético de sonrisa" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Armonización de sonrisa</h3><p>Resultado estético que destaca la naturalidad y la armonía de la sonrisa.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="FRACTURA DENTAL.jpeg" alt="Caso clínico de fractura dental" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Restauración por fractura dental</h3><p>Detalle de un caso restaurador. La indicación y el resultado dependen de la valoración individual.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="MICRODISEÑO DE ANTERIORES.jpg" alt="Microdiseño de dientes anteriores" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Microdiseño de sonrisa</h3><p>Armonía de los dientes anteriores con un enfoque conservador y personalizado.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="Gingivoplastia.jpeg" alt="Caso de estética gingival" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Estética gingival</h3><p>Contorno de encías y proporción de la sonrisa según las necesidades clínicas.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap split">
-              <img src="antes de David.jpg" alt="Registro previo del caso David" loading="lazy" decoding="async">
-              <img src="despues de david.jpg" alt="Registro posterior del caso David" loading="lazy" decoding="async">
-            </div>
-            <div class="case-content"><h3>Rehabilitación estética</h3><p>Caso David: registros comparativos antes y después del tratamiento.</p></div>
-          </article>
-          <article class="case-card">
-            <div class="case-img-wrap"><img src="antes y despues de emanuel.jpg" alt="Registro antes y después del caso Emanuel" loading="lazy" decoding="async"></div>
-            <div class="case-content"><h3>Cierre de diastemas</h3><p>Corrección de espacios entre dientes para mejorar la continuidad y armonía de la sonrisa.</p></div>
-          </article>
+          <article class="case-card"><div class="case-img-wrap"><img src="SONRISA.jpg" alt="Resultado estético de sonrisa" loading="lazy" decoding="async"></div><div class="case-content"><h3>Armonización de sonrisa</h3><p>Resultado estético que destaca la naturalidad y la armonía de la sonrisa.</p></div></article>
+          <article class="case-card"><div class="case-img-wrap"><img src="FRACTURA DENTAL.jpeg" alt="Caso clínico de fractura dental" loading="lazy" decoding="async"></div><div class="case-content"><h3>Restauración por fractura dental</h3><p>Detalle de un caso restaurador. La indicación y el resultado dependen de la valoración individual.</p></div></article>
+          <article class="case-card"><div class="case-img-wrap"><img src="MICRODISEÑO DE ANTERIORES.jpg" alt="Microdiseño de dientes anteriores" loading="lazy" decoding="async"></div><div class="case-content"><h3>Microdiseño de sonrisa</h3><p>Armonía de los dientes anteriores con un enfoque conservador y personalizado.</p></div></article>
+          <article class="case-card"><div class="case-img-wrap"><img src="Gingivoplastia.jpeg" alt="Caso de estética gingival" loading="lazy" decoding="async"></div><div class="case-content"><h3>Estética gingival</h3><p>Contorno de encías y proporción de la sonrisa según las necesidades clínicas.</p></div></article>
+          <article class="case-card"><div class="case-img-wrap split"><img src="antes de David.jpg" alt="Registro previo del caso David" loading="lazy" decoding="async"><img src="despues de david.jpg" alt="Registro posterior del caso David" loading="lazy" decoding="async"></div><div class="case-content"><h3>Rehabilitación estética</h3><p>Caso David: registros comparativos antes y después del tratamiento.</p></div></article>
+          <article class="case-card"><div class="case-img-wrap"><img src="antes y despues de emanuel.jpg" alt="Registro antes y después del caso Emanuel" loading="lazy" decoding="async"></div><div class="case-content"><h3>Cierre de diastemas</h3><p>Corrección de espacios entre dientes para mejorar la continuidad y armonía de la sonrisa.</p></div></article>
         </div>
         <div style="text-align: center; margin-top: 50px;">
            <a class="button outline" href="https://www.instagram.com/dra.alixcamachoc" target="_blank" rel="noopener noreferrer" style="padding: 14px 28px; font-size: 12px;"><i class="fa-brands fa-instagram"></i> Explorar Portafolio Completo en Instagram</a>
@@ -542,50 +488,31 @@
           <h2>Testimonios y <span class="gold">Opiniones</span></h2>
           <p>Conozca la experiencia de quienes ya han confiado en nosotros y déjenos su calificación.</p>
         </div>
-        
         <div class="reviews-container">
           <div class="review-form-box">
             <h3>¿Cómo fue tu experiencia?</h3>
             <form id="review-form">
-              <div class="form-group">
-                <input type="text" id="rev-name" name="name" placeholder="Tu nombre" autocomplete="name" maxlength="60" required>
-              </div>
-              <div class="form-group rating-input">
-                <label>Calificación:</label>
-                <div class="stars-select">
-                  <input type="radio" name="rating" id="star5" value="5" required><label for="star5"><i class="fa-solid fa-star"></i></label>
-                  <input type="radio" name="rating" id="star4" value="4"><label for="star4"><i class="fa-solid fa-star"></i></label>
-                  <input type="radio" name="rating" id="star3" value="3"><label for="star3"><i class="fa-solid fa-star"></i></label>
-                  <input type="radio" name="rating" id="star2" value="2"><label for="star2"><i class="fa-solid fa-star"></i></label>
-                  <input type="radio" name="rating" id="star1" value="1"><label for="star1"><i class="fa-solid fa-star"></i></label>
-                </div>
-              </div>
-              <div class="form-group">
-                <textarea id="rev-text" name="comment" placeholder="Escribe tu comentario..." rows="3" maxlength="500" required></textarea>
-              </div>
-              <div class="form-group recommend-input">
-                <label>¿Nos recomendarías a tus amigos?</label>
-                <div class="radio-group">
-                  <input type="radio" name="recommend" id="rec-yes" value="yes" checked><label for="rec-yes">Sí</label>
-                  <input type="radio" name="recommend" id="rec-no" value="no"><label for="rec-no">No</label>
-                </div>
-              </div>
+              <div class="form-group"><input type="text" id="rev-name" name="name" placeholder="Tu nombre" autocomplete="name" maxlength="60" required></div>
+              <div class="form-group rating-input"><label>Calificación:</label><div class="stars-select">
+                <input type="radio" name="rating" id="star5" value="5" required><label for="star5"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" name="rating" id="star4" value="4"><label for="star4"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" name="rating" id="star3" value="3"><label for="star3"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" name="rating" id="star2" value="2"><label for="star2"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" name="rating" id="star1" value="1"><label for="star1"><i class="fa-solid fa-star"></i></label>
+              </div></div>
+              <div class="form-group"><textarea id="rev-text" name="comment" placeholder="Escribe tu comentario..." rows="3" maxlength="500" required></textarea></div>
+              <div class="form-group recommend-input"><label>¿Nos recomendarías a tus amigos?</label><div class="radio-group">
+                <input type="radio" name="recommend" id="rec-yes" value="yes" checked><label for="rec-yes">Sí</label>
+                <input type="radio" name="recommend" id="rec-no" value="no"><label for="rec-no">No</label>
+              </div></div>
               <button type="submit" class="button" style="width:100%">Publicar comentario</button>
               <div id="form-message" role="status" aria-live="polite" style="display:none; color:#4ade80; font-size:12px; margin-top:12px; text-align:center;"></div>
               <p class="form-note">Los comentarios que envíes se guardan únicamente en este navegador y no se publican en otros dispositivos.</p>
             </form>
           </div>
-
           <div class="reviews-list">
-            <div class="reviews-header">
-              <div>
-                <h3 style="margin:0; font-size:19px; color:var(--text); font-family:Cinzel,serif">Opiniones en este navegador (<span id="rev-count">4</span>)</h3>
-                <p style="font-size:11px; margin:4px 0 0; color:var(--gold)">Calificación promedio 4.9 de 5</p>
-              </div>
-            </div>
-            <div class="reviews-grid" id="reviews-grid">
-                <!-- Los comentarios se insertan dinámicamente aquí -->
-            </div>
+            <div class="reviews-header"><div><h3 style="margin:0; font-size:19px; color:var(--text); font-family:Cinzel,serif">Opiniones en este navegador (<span id="rev-count">4</span>)</h3><p style="font-size:11px; margin:4px 0 0; color:var(--gold)">Calificación promedio 4.9 de 5</p></div></div>
+            <div class="reviews-grid" id="reviews-grid"><!-- Los comentarios se insertan dinámicamente aquí --></div>
           </div>
         </div>
       </div>
@@ -593,44 +520,24 @@
 
     <section class="section" id="conecta">
       <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Acceso Directo</span>
-          <h2>Código QR para <span class="gold">Escanear</span></h2>
-          <p>Escanea nuestro código para chatear directamente por WhatsApp o visitar nuestro Instagram.</p>
-        </div>
-        <div class="qr-container">
-          <img src="CODIGO QR.png" alt="Código QR Oficial" loading="lazy">
-        </div>
+        <div class="section-heading"><span class="eyebrow">Acceso Directo</span><h2>Código QR para <span class="gold">Escanear</span></h2><p>Escanea nuestro código para chatear directamente por WhatsApp o visitar nuestro Instagram.</p></div>
+        <div class="qr-container"><img src="CODIGO QR.png" alt="Código QR Oficial" loading="lazy"></div>
       </div>
     </section>
 
     <section class="section" id="sedes">
       <div class="wrap">
-        <div class="section-heading">
-          <span class="eyebrow">Ubicaciones en Medellín</span>
-          <h2>Dos sedes, <span class="gold">una atención cercana</span></h2>
-          <p>Comuníquese con la sede de su preferencia para consultar disponibilidad y programar su cita.</p>
-        </div>
+        <div class="section-heading"><span class="eyebrow">Ubicaciones en Medellín</span><h2>Dos sedes, <span class="gold">una atención cercana</span></h2><p>Comuníquese con la sede de su preferencia para consultar disponibilidad y programar su cita.</p></div>
         <div class="grid3" style="grid-template-columns:repeat(2,1fr)">
           <!-- TARJETA ZONA SUR INTACTA -->
           <article class="card location">
             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" alt="Centro Profesional El Crucero, sede Zona Sur" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80'">
-            <div class="location-content">
-              <h3>Sede Zona Sur</h3>
-              <div class="address">Centro Profesional El Crucero · Torre 1 · Medellín</div>
-              <p>Atención con cita programada en el Centro Profesional El Crucero. Consulte por WhatsApp indicaciones y disponibilidad.</p>
-              <a class="button" href="https://wa.me/573105424242?text=Hola%20Dra.%20Alix%2C%20deseo%20informaci%C3%B3n%20de%20la%20Sede%20Zona%20Sur" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp +57 310 542 4242</a>
-            </div>
+            <div class="location-content"><h3>Sede Zona Sur</h3><div class="address">Centro Profesional El Crucero · Torre 1 · Medellín</div><p>Atención con cita programada en el Centro Profesional El Crucero. Consulte por WhatsApp indicaciones y disponibilidad.</p><a class="button" href="https://wa.me/573105424242?text=Hola%20Dra.%20Alix%2C%20deseo%20informaci%C3%B3n%20de%20la%20Sede%20Zona%20Sur" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp +57 310 542 4242</a></div>
           </article>
           <!-- TARJETA ZONA NORTE INTACTA -->
           <article class="card location">
             <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Instalaciones de la sede Zona Norte" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80'">
-            <div class="location-content">
-              <h3>Sede Zona Norte</h3>
-              <div class="address">Carrera 73 No. 95-75 · Medellín</div>
-              <p>Sede de atención odontológica integral. Consulte por WhatsApp cómo llegar y los horarios disponibles.</p>
-              <a class="button" href="https://wa.me/573142909777?text=Hola%20Dra.%20Alix%2C%20deseo%20informaci%C3%B3n%20de%20la%20Sede%20Zona%20Norte" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp +57 314 290 9777</a>
-            </div>
+            <div class="location-content"><h3>Sede Zona Norte</h3><div class="address">Carrera 73 No. 95-75 · Medellín</div><p>Sede de atención odontológica integral. Consulte por WhatsApp cómo llegar y los horarios disponibles.</p><a class="button" href="https://wa.me/573142909777?text=Hola%20Dra.%20Alix%2C%20deseo%20informaci%C3%B3n%20de%20la%20Sede%20Zona%20Norte" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp +57 314 290 9777</a></div>
           </article>
         </div>
       </div>
@@ -650,15 +557,7 @@
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <span>© Dra. Alix Camacho C. · Odontología Integral &amp; Estética · Medellín, Colombia</span>
-      <div style="display:flex; gap:15px; align-items:center;">
-         <a href="https://www.instagram.com/dra.alixcamachoc" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @dra.alixcamachoc</a>
-         <a href="mailto:dra.alixcamachoc@gmail.com">dra.alixcamachoc@gmail.com</a>
-      </div>
-    </div>
-  </footer>
+  <footer><div class="wrap"><span>© Dra. Alix Camacho C. · Odontología Integral &amp; Estética · Medellín, Colombia</span><div style="display:flex; gap:15px; align-items:center;"><a href="https://www.instagram.com/dra.alixcamachoc" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @dra.alixcamachoc</a><a href="mailto:dra.alixcamachoc@gmail.com">dra.alixcamachoc@gmail.com</a></div></div></footer>
 
   <!-- REPRODUCTOR DE MÚSICA Y BOTÓN FLOTANTE ACTUALIZADO -->
   <audio id="bg-music" src="jazz-blues-ambiental.MP3" loop preload="auto"></audio>
@@ -671,15 +570,15 @@
     // Menú móvil
     const toggle=document.getElementById('menu-toggle');const nav=document.getElementById('nav');
     toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';});
-    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<i class="fa-solid fa-bars"></i>';}));
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<i class="fa-solid fa-bars"></i>'; }));
 
     // Sistema de Reseñas y Comentarios
     const defaultReviews = [
       { name: "Sandra", rating: 5, text: "Recomendaría el tratamiento y el manejo de cada especialista. Me pareció excelente el servicio y la presentación visual del trabajo.", recommend: true },
-      { name: "Rosa", rating: 5, text: "Pedí una cita por mi EPS y tuve la fortuna de ser atendida por la doctora Alix. Después de experiencias difíciles con otros odontólogos, recuperé la confianza y perdí el miedo a la odontología. Gracias por su calidad humana y por ayudarme a volver a sonreír.", recommend: true },
+      { name: "Rosa", rating: 5, text: "Pedí una cita por mi EPS y tuve la fortuna de ser atendida por la doctora Alix. Después de experiencias difíciles con otros odontólogos, recuperé la confianza.", recommend: true },
       { name: "Natalia", rating: 5, text: "La mejor odontóloga. Su calidad humana es lo mejor y los materiales que utiliza son siempre de excelente calidad. ¡Súper recomendada!", recommend: true },
       { name: "Mayrlen", rating: 5, text: "Es una excelente profesional y un gran ser humano. Me fue muy bien con su tratamiento.", recommend: true },
-      { name: "María", rating: 5, text: "Me quedó excelente el color de las carillas y me siento muy bien con la mordida. Doctora, es la mejor odontóloga que he tenido por su profesionalismo y entrega. Mil gracias nuevamente. Siempre la buscaré y recomendaré.", recommend: true },
+      { name: "María", rating: 5, text: "Me quedó excelente el color de las carillas y me siento muy bien con la mordida. Doctora, es la mejor odontóloga que he tenido por su profesionalismo y calidez.", recommend: true },
       { name: "Geraldine", rating: 5, text: "Excelente profesional, muy buena y apasionada en lo que hace.", recommend: true },
       { name: "Vanessa", rating: 5, text: "¡Excelentes profesionales! Siempre brindando el mejor servicio.", recommend: true },
       { name: "Familia Bedoya", rating: 5, text: "Si la hubiéramos conocido antes, nos habríamos ahorrado muchos dolores de cabeza. Nos atiende a toda la familia.", recommend: true }
