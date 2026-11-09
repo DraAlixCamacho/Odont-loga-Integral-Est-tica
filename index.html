@@ -118,8 +118,7 @@
     a[href*="instagram.com"]:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.12)}
     a[href*="instagram.com"] .fa-instagram{display:inline-block;transition:transform .35s ease}
     a[href*="instagram.com"]:hover .fa-instagram{transform:rotate(-12deg) scale(1.15)}
-    @media(prefers-reduced-motion:reduce){a[href*="wa.me"],a[href*="wa.me"] .fa-whatsapp,.ig-btn{animation:none!important}a[href*="instagram.com"],a[href*="instagram.com"] .fa-instagram{transition:none!important}}
-
+    
     /* MICROINTERACCIONES PREMIUM: enlaces, retrato, nombre y logo */
     @keyframes goldHalo{0%,100%{box-shadow:0 0 0 3px rgba(212,175,55,.08),0 0 18px rgba(212,175,55,.18)}50%{box-shadow:0 0 0 5px rgba(212,175,55,.16),0 0 30px rgba(249,223,159,.38)}}
     @keyframes portraitHalo{0%,100%{box-shadow:0 0 0 1px rgba(212,175,55,.55),0 0 22px rgba(212,175,55,.2),0 0 42px rgba(212,175,55,.08)}50%{box-shadow:0 0 0 3px rgba(249,223,159,.8),0 0 34px rgba(212,175,55,.42),0 0 58px rgba(212,175,55,.16)}}
@@ -143,13 +142,7 @@
     .button:active,.ig-btn:active{transform:translateY(0) scale(.98)}
     nav a,.top a,footer a{position:relative;transition:color .25s ease,text-shadow .25s ease,transform .25s ease}
     nav a:hover,.top a:hover,footer a:hover{color:var(--gold-light);text-shadow:0 0 12px rgba(212,175,55,.4);transform:translateY(-1px)}
-    @media(prefers-reduced-motion:reduce){
-      .monogram,.brand strong,.portrait,.doctor-card h2{animation:none!important}
-      .button::after,.ig-btn::after{display:none}
-      .brand:hover .monogram,.doctor-card:hover .portrait,.button:hover,.ig-btn:hover{transform:none}
-      .portrait img{transition:none}
-    }
-
+    
     .section{padding:78px 0;border-top:1px solid var(--line)}
     .section-heading{text-align:center;max-width:760px;margin:0 auto 42px}
     .section-heading h2{font-size:clamp(28px,4vw,46px);margin:13px 0;letter-spacing:.02em}
@@ -185,41 +178,34 @@
       box-shadow:0 10px 30px rgba(0,0,0,.7);
       position:relative;
     }
-    /* Efecto Hover Moderno: Elevación + Halo Dorado */
     .case-card:hover{
       transform:translateY(-8px);
       border-color:var(--gold);
       box-shadow:0 20px 45px rgba(0,0,0,.9), 0 0 25px rgba(212, 175, 55, 0.25);
     }
-    
-    /* Contenedor Limpio sin recortar fotos (object-fit: contain) */
     .case-img-wrap{
       position:relative;
       width:100%;
       height:280px;
       display:flex;
-      background:#000; /* Fondo negro absoluto para destacar la foto */
+      background:#000;
       padding:10px;
-      overflow:hidden; /* Necesario para el efecto de zoom */
+      overflow:hidden;
     }
     .case-img-wrap img{
       width:100%;
       height:100%;
-      object-fit:contain; /* Fotos completas sin recorte */
+      object-fit:contain;
       border-radius:6px;
-      transition:transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Suavidad del zoom */
+      transition:transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    /* Efecto Zoom Interior en la foto */
     .case-card:hover .case-img-wrap img {
       transform: scale(1.05);
     }
-    
-    /* Fotos Divididas (Caso David) */
     .case-img-wrap.split{display:flex;gap:4px;padding:8px;aspect-ratio:4 / 3}
     .case-img-wrap.split img{width:calc(50% - 2px);padding:0}
     .case-img-wrap.split img:last-child{border-left:1px solid rgba(212, 175, 55, 0.3)}
     
-    /* Textos del portafolio con línea dorada fina */
     .case-card .case-content{
       padding:22px;
       background:rgba(10, 12, 16, 0.95);
@@ -272,11 +258,87 @@
     footer a{color:var(--gold-light);text-decoration:none;transition:color .2s}
     footer a:hover{color:var(--gold)}
     .mobile-toggle{display:none;background:none;border:1px solid var(--gold);border-radius:9px;color:var(--gold-light);padding:9px 12px;font-size:18px;cursor:pointer}
+
+    /* ESTILOS DEL REPRODUCTOR DE MÚSICA */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #111111;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+    .music-btn:hover {
+      background-color: var(--gold);
+      color: #111111;
+      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+    }
+    .music-btn .icon {
+      font-size: 18px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .music-btn.playing .icon {
+      animation: pulse 1s infinite alternate;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
     
     @media(max-width:900px){nav{gap:12px}nav a{font-size:9px}.desktop-cta{display:none}.hero-grid{gap:32px}.services{grid-template-columns:repeat(2,1fr)}.reviews-container{grid-template-columns:1fr}}
-    @media(max-width:680px){.wrap{width:min(var(--max),calc(100% - 30px))}.top .wrap{justify-content:center;text-align:center}.top-links{justify-content:center}header{height:68px}nav{display:none;position:absolute;left:0;right:0;top:67px;padding:20px 24px;background:#0d0f14;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:16px;box-shadow:0 10px 20px rgba(0,0,0,.7)}nav.open{display:flex}nav a{font-size:11px}.mobile-toggle{display:block}.hero{padding:56px 0}.hero-grid{grid-template-columns:1fr;gap:38px}.hero-copy{text-align:center}.lead{margin:auto}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}.actions{justify-content:center}.address-line{line-height:2}.doctor-card{max-width:420px;margin:auto}.section{padding:58px 0}.grid3{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr;gap:11px}.services .card{padding:16px}.services .card h3{font-size:14px}.location img{height:170px}.contact-row .button{width:100%}}
-    @media(max-width:680px){.cases-grid{grid-template-columns:1fr;gap:18px}.case-img-wrap{min-height:190px}.qr-container{width:min(72vw,220px);padding:10px}.qr-container img{max-width:200px}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    @media(max-width:680px){
+      .wrap{width:min(var(--max),calc(100% - 30px))}
+      .top .wrap{justify-content:center;text-align:center}
+      .top-links{justify-content:center}
+      header{height:68px}
+      nav{display:none;position:absolute;left:0;right:0;top:67px;padding:20px 24px;background:#0d0f14;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:16px;box-shadow:0 10px 20px rgba(0,0,0,.7)}
+      nav.open{display:flex}
+      nav a{font-size:11px}
+      .mobile-toggle{display:block}
+      .hero{padding:56px 0}
+      .hero-grid{grid-template-columns:1fr;gap:38px}
+      .hero-copy{text-align:center}
+      .lead{margin:auto}
+      .stats{grid-template-columns:1fr 1fr}
+      .stat:last-child{grid-column:span 2}
+      .actions{justify-content:center}
+      .address-line{line-height:2}
+      .doctor-card{max-width:420px;margin:auto}
+      .section{padding:58px 0}
+      .grid3{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr 1fr;gap:11px}
+      .services .card{padding:16px}
+      .services .card h3{font-size:14px}
+      .location img{height:170px}
+      .contact-row .button{width:100%}
+      .cases-grid{grid-template-columns:1fr;gap:18px}
+      .case-img-wrap{min-height:190px}
+      .qr-container{width:min(72vw,220px);padding:10px}
+      .qr-container img{max-width:200px}
+      .music-btn { bottom: 15px; right: 15px; padding: 8px 15px; font-size: 12px; }
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+      a[href*="wa.me"],a[href*="wa.me"] .fa-whatsapp,.ig-btn{animation:none!important}
+      a[href*="instagram.com"],a[href*="instagram.com"] .fa-instagram{transition:none!important}
+      .monogram,.brand strong,.portrait,.doctor-card h2{animation:none!important}
+      .button::after,.ig-btn::after{display:none}
+      .brand:hover .monogram,.doctor-card:hover .portrait,.button:hover,.ig-btn:hover{transform:none}
+      .portrait img{transition:none}
+      .music-btn.playing .icon{animation:none}
+    }
   </style>
 </head>
 <body>
@@ -441,7 +503,6 @@
             <div class="case-img-wrap"><img src="SONRISA.jpg" alt="Resultado estético de sonrisa" loading="lazy" decoding="async"></div>
             <div class="case-content"><h3>Armonización de sonrisa</h3><p>Resultado estético que destaca la naturalidad y la armonía de la sonrisa.</p></div>
           </article>
-
           <article class="case-card">
             <div class="case-img-wrap"><img src="FRACTURA DENTAL.jpeg" alt="Caso clínico de fractura dental" loading="lazy" decoding="async"></div>
             <div class="case-content"><h3>Restauración por fractura dental</h3><p>Detalle de un caso restaurador. La indicación y el resultado dependen de la valoración individual.</p></div>
@@ -454,10 +515,6 @@
             <div class="case-img-wrap"><img src="Gingivoplastia.jpeg" alt="Caso de estética gingival" loading="lazy" decoding="async"></div>
             <div class="case-content"><h3>Estética gingival</h3><p>Contorno de encías y proporción de la sonrisa según las necesidades clínicas.</p></div>
           </article>
-          
-          
-          
-          
           <article class="case-card">
             <div class="case-img-wrap split">
               <img src="antes de David.jpg" alt="Registro previo del caso David" loading="lazy" decoding="async">
@@ -525,7 +582,7 @@
               </div>
             </div>
             <div class="reviews-grid" id="reviews-grid">
-               <!-- Los comentarios se insertan dinámicamente aquí -->
+                <!-- Los comentarios se insertan dinámicamente aquí -->
             </div>
           </div>
         </div>
@@ -601,6 +658,13 @@
     </div>
   </footer>
 
+  <!-- REPRODUCTOR DE MÚSICA Y BOTÓN FLOTANTE -->
+  <audio id="bg-music" src="jazz-blues-ambiental.mp3" loop preload="auto"></audio>
+  <button id="music-toggle" class="music-btn" aria-label="Activar o pausar música">
+    <span class="icon">♪</span>
+    <span class="text">Activar música</span>
+  </button>
+
   <script>
     // Menú móvil
     const toggle=document.getElementById('menu-toggle');const nav=document.getElementById('nav');
@@ -608,8 +672,6 @@
     nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<i class="fa-solid fa-bars"></i>';}));
 
     // Sistema de Reseñas y Comentarios
-    // Opiniones transcritas de los mensajes y comentarios compartidos.
-    // Se muestran solo los nombres de pila para proteger la privacidad de los pacientes.
     const defaultReviews = [
       { name: "Sandra", rating: 5, text: "Recomendaría el tratamiento y el manejo de cada especialista. Me pareció excelente el servicio y la presentación visual del trabajo.", recommend: true },
       { name: "Rosa", rating: 5, text: "Pedí una cita por mi EPS y tuve la fortuna de ser atendida por la doctora Alix. Después de experiencias difíciles con otros odontólogos, recuperé la confianza y perdí el miedo a la odontología. Gracias por su calidad humana y por ayudarme a volver a sonreír.", recommend: true },
@@ -707,8 +769,27 @@
         message.style.display = 'block';
       }
     });
-    // Iniciar reseñas al cargar
+
     renderReviews();
+
+    // Lógica del Reproductor de Música
+    const audio = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
+    const btnText = toggleBtn.querySelector(".text");
+    
+    audio.volume = 0.2; // Volumen suave inicial
+
+    toggleBtn.addEventListener("click", function() {
+      if (audio.paused) {
+        audio.play();
+        toggleBtn.classList.add("playing");
+        btnText.textContent = "Pausar música";
+      } else {
+        audio.pause();
+        toggleBtn.classList.remove("playing");
+        btnText.textContent = "Activar música";
+      }
+    });
   </script>
 </body>
 </html>
