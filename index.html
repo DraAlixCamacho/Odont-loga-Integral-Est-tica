@@ -60,7 +60,7 @@
     header{height:76px;position:sticky;top:0;z-index:5;background:rgba(3,4,6,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
     header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}
     .brand{text-decoration:none;display:flex;align-items:center;gap:12px}
-    .monogram{width:45px;height:45px;border:1px solid rgba(212, 175, 55, .6);border-radius:50%;display:grid;place-items:center;font:600 19px Cinzel,serif;color:var(--gold);object-fit:cover;padding:0}
+    .monogram{width:52px;height:52px;flex:0 0 52px;box-sizing:border-box;border:1.5px solid rgba(212,175,55,.8);border-radius:50%;display:block;object-fit:contain;object-position:center;padding:5px;background:radial-gradient(circle at 50% 45%,#242424 0%,#090909 72%);box-shadow:0 0 0 3px rgba(212,175,55,.08),0 0 18px rgba(212,175,55,.16);overflow:hidden}
     .brand strong{display:block;font:600 16px Cinzel,serif;letter-spacing:.12em}
     .brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.18em;text-transform:uppercase}
     
@@ -106,6 +106,19 @@
     /* BOTÓN IG - DISEÑO INTACTO */
     .ig-btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:999px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff!important;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;box-shadow:0 6px 20px rgba(220,39,67,.25);transition:transform .2s;border:none;cursor:pointer}
     .ig-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+
+    /* Enlaces sociales con movimiento sutil y accesible */
+    @keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.18)}50%{box-shadow:0 8px 30px rgba(37,211,102,.42)}}
+    @keyframes waIcon{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-2px) rotate(-8deg)}}
+    @keyframes instaGlow{0%,100%{box-shadow:0 6px 20px rgba(220,39,67,.22);background-position:0% 50%}50%{box-shadow:0 8px 28px rgba(220,39,67,.42);background-position:100% 50%}}
+    a[href*="wa.me"]{animation:waPulse 2.8s ease-in-out infinite}
+    a[href*="wa.me"] .fa-whatsapp{display:inline-block;animation:waIcon 1.8s ease-in-out infinite}
+    a[href*="instagram.com"]{transition:transform .25s ease,filter .25s ease,box-shadow .25s ease}
+    .ig-btn{background-size:200% 200%;animation:instaGlow 4s ease-in-out infinite}
+    a[href*="instagram.com"]:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.12)}
+    a[href*="instagram.com"] .fa-instagram{display:inline-block;transition:transform .35s ease}
+    a[href*="instagram.com"]:hover .fa-instagram{transform:rotate(-12deg) scale(1.15)}
+    @media(prefers-reduced-motion:reduce){a[href*="wa.me"],a[href*="wa.me"] .fa-whatsapp,.ig-btn{animation:none!important}a[href*="instagram.com"],a[href*="instagram.com"] .fa-instagram{transition:none!important}}
 
     .section{padding:78px 0;border-top:1px solid var(--line)}
     .section-heading{text-align:center;max-width:760px;margin:0 auto 42px}
